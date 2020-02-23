@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://vapourl.github.io/LittleRice.io/</id>
+    <title>糯米糯米の世界</title>
+    <updated>2020-02-23T10:20:52.706Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://vapourl.github.io/LittleRice.io/"/>
+    <link rel="self" href="https://vapourl.github.io/LittleRice.io/atom.xml"/>
+    <subtitle>这一生一百年，不是备尝艰辛，更不是疲于奔命。</subtitle>
+    <logo>https://vapourl.github.io/LittleRice.io/images/avatar.png</logo>
+    <icon>https://vapourl.github.io/LittleRice.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, 糯米糯米の世界</rights>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://vapourl.github.io/LittleRice.io/post/hello-gridea/</id>
+        <link href="https://vapourl.github.io/LittleRice.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></content>
+    </entry>
+</feed>
