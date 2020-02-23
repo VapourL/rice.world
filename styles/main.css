@@ -138,12 +138,17 @@ nav ul.inline li a {
 }
 
       .paper {
-        background: #ffc9c9;
+        background: #99e9f2;
       }
     
       .navbar {
         background: #845ef7;
       }
     
-      body {background-image: url(http://i2.tiimg.com/669018/615d2ec307b72428.jpg);}
+      body  {
+background-image: url(http://i2.tiimg.com/669018/615d2ec307b72428.jpg);
+background-repeat: repeat-y;
+background-attachment:fixed;
+}
+
     
