@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://vapourl.github.io/rice.world/</id>
     <title>糯米糯米の世界</title>
-    <updated>2020-02-24T02:23:04.027Z</updated>
+    <updated>2020-02-24T02:34:00.559Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://vapourl.github.io/rice.world/"/>
     <link rel="self" href="https://vapourl.github.io/rice.world/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 糯米糯米の世界</rights>
     <entry>
         <title type="html"><![CDATA[小糯米教你从0开始搭建GitHub博客！]]></title>
-        <id>https://vapourl.github.io/rice.world/post/xiao-nuo-mi-jiao-ni-cong-0-kai-shi-da-jian-github-bo-ke/</id>
-        <link href="https://vapourl.github.io/rice.world/post/xiao-nuo-mi-jiao-ni-cong-0-kai-shi-da-jian-github-bo-ke/">
+        <id>https://vapourl.github.io/rice.world/post/GitHubandblog/</id>
+        <link href="https://vapourl.github.io/rice.world/post/GitHubandblog/">
         </link>
         <updated>2020-02-24T01:19:58.000Z</updated>
     </entry>
