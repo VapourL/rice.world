@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | 糯米糯米の世界</title>
+<title>P3178题解 | 糯米糯米の世界</title>
 <meta name="description" content="这一生一百年，不是备尝艰辛，更不是疲于奔命。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -88,26 +88,211 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>关于</h1>
+            <h1>P3178题解</h1>
             <p class="article-meta">
-              2019-January-25th,Friday
+              2020-February-24th,Monday
               
             </p>
             
             <div class="post-content">
-              <blockquote>
-<p>想吃我吗？不可能哦~</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>嗯……就这样……那样……在这样随便搭的</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>QQ：1750562553<br>
-粉丝群：1037271273</p>
+              <p>首先说说重链序：</p>
+<p>第一次dfs，算出dep[]、fa[N]、size[N]、son[N]，其中son[x]通过size[y]计算最大值得到。</p>
+<p>第二次dfs，传入x和链首元素tp：</p>
+<p>对其儿子列表，首先递归son[x]，然后再递归其它儿子（轻儿子）<br>
+重儿子递归，tp元素不变，轻儿子递归，tp改成轻儿子自己<br>
+每个结点都存储到o[++last]=x里，同时存储p[x]=last<br>
+最后，输出o[N]即为重链剖分以后的序。</p>
+<p>首先树链剖分得到重链序，然后考虑操作：</p>
+<p>1-单点更新：</p>
+<p>2-区间更新：以某点为根的区间是p[x]和p[x]+size[x]-1，刚好连续</p>
+<p>3-求路径：某点到根的路径，可以按重链、跳、重链…的组合来实现，也即多个区间的和组合起来。</p>
+<p>显然，可以用线段树来维护区间操作和查询。</p>
+<p>AC代码：</p>
+<pre><code class="language-cpp">#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+const int N = 1e5 + 1;
+typedef long long ll;
+ll n, m, fa[N], top[N], siz[N], son[N], o[N], las, p[N], v[N];
+bool vis[N];
+vector&lt;ll&gt; g[N];
+inline ll read()
+{
+    ll x = 0, f = 1;
+    char ch = getchar();
+    while (ch &lt; '0' || ch &gt; '9')
+    {
+        if (ch == '-')
+            f = -1;
+        ch = getchar();
+    }
+    while (ch &gt;= '0' &amp;&amp; ch &lt;= '9')
+    {
+        x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (ch ^ 48);
+        ch = getchar();
+    }
+    return x * f;
+}
+void dfs1(ll x, ll fat, ll len)
+{
+    fa[x] = fat;
+    siz[x] = 1;
+    for (ll i = 0; i &lt; g[x].size(); ++i)
+    {
+        ll y = g[x][i];
+        if (y == fat)
+            continue;
+        dfs1(y, x, len + 1);
+        siz[x] += siz[y];
+        if (siz[y] &gt; siz[son[x]])
+            son[x] = y;
+    }
+}
+void dfs2(ll x, ll dp)
+{
+    top[x] = dp;
+    o[++las] = v[x];
+    p[x] = las;
+    if (son[x] == 0)
+        return;
+    dfs2(son[x], dp);
+    for (ll i = 0; i &lt; g[x].size(); ++i)
+    {
+        ll y = g[x][i];
+        if (y == fa[x] || y == son[x])
+            continue;
+        dfs2(y, y);
+    }
+}
+struct node
+{
+    ll l, r, sum, tag;
+    ll len()
+    {
+        return r - l + 1;
+    }
+};
+node tree[4 * N];
+void bud(ll l, ll r, ll k)
+{
+    tree[k].l = l;
+    tree[k].r = r;
+    if (l == r)
+    {
+        tree[k].sum = o[l];
+        return;
+    }
+    ll mid = (l + r) / 2;
+    bud(l, mid, 2 * k);
+    bud(mid + 1, r, 2 * k + 1);
+    tree[k].sum = tree[2 * k].sum + tree[2 * k + 1].sum;
+}
+void but(ll k, ll tag)
+{
+    tree[k].sum += tree[k].len() * tag;
+    tree[k].tag += tag;
+}
+void pud(ll k)
+{
+    but(2 * k, tree[k].tag);
+    but(2 * k + 1, tree[k].tag);
+    tree[k].tag = 0;
+}
+void upd(ll x, ll y, ll a, ll k)
+{
+    ll l = tree[k].l, r = tree[k].r;
+    if (x &lt;= l &amp;&amp; y &gt;= r)
+    {
+        but(k, a);
+        return;
+    }
+    if (tree[k].tag)
+        pud(k);
+    ll mid = (l + r) / 2;
+    if (x &lt;= mid)
+        upd(x, y, a, 2 * k);
+    if (y &gt;= mid + 1)
+        upd(x, y, a, 2 * k + 1);
+    tree[k].sum = tree[2 * k].sum + tree[2 * k + 1].sum;
+}
+ll que(ll x, ll y, ll k)
+{
+    ll l = tree[k].l, r = tree[k].r;
+    if (x &lt;= l &amp;&amp; y &gt;= r)
+        return tree[k].sum;
+    if (tree[k].tag)
+        pud(k);
+    ll mid = (l + r) / 2, ans = 0;
+    if (x &lt;= mid)
+        ans += que(x, y, 2 * k);
+    if (y &gt;= mid + 1)
+        ans += que(x, y, 2 * k + 1);
+    return ans;
+}
+int main()
+{
+    n = read();
+    m = read();
+    for (ll i = 1; i &lt;= n; ++i)
+        v[i] = read();
+    for (ll i = 1; i &lt;= n - 1; ++i)
+    {
+        ll x, y;
+        x = read();
+        y = read();
+        g[x].push_back(y);
+        g[y].push_back(x);
+    }
+    dfs1(1, 0, 1);
+    dfs2(1, 1);
+    bud(1, n, 1);
+    for (ll i = 1; i &lt;= m; ++i)
+    {
+        ll cmd, x, a;
+        cmd = read();
+        x = read();
+        if (cmd == 1)
+        {
+            a = read();
+            upd(p[x], p[x], a, 1);
+        }
+        if (cmd == 2)
+        {
+            a = read();
+            upd(p[x], p[x] + siz[x] - 1, a, 1);
+        }
+        if (cmd == 3)
+        {
+            ll sum = 0;
+            while (top[x] != 1)
+            {
+                sum += que(p[top[x]], p[x], 1);
+                x = fa[top[x]];
+            }
+            sum += que(1, p[x], 1);
+            printf(&quot;%lld\n&quot;, sum);
+        }
+    }
+    return 0;
+}
+</code></pre>
 
             </div>
           </article>
         </div>
         <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                继续愉悦！
+              </div>
+              <a href="https://vapourl.github.io/rice.world/post/GitHubandblog/">
+                <h3 class="post-title">
+                  小糯米教你从0开始搭建GitHub博客！
+                </h3>
+              </a>
+            </div>
           
         </div>
         
@@ -179,7 +364,7 @@
     </div>
     <div class="row">
       
-        <a href="https://vapourl.github.io/rice.world/tag/AESYtYRhx/" class="badge success">
+        <a href="https://vapourl.github.io/rice.world/tag/AESYtYRhx/" class="badge secondary">
           自我介绍
         </a>
       
