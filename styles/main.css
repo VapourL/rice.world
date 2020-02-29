@@ -148,6 +148,7 @@ nav ul.inline li a {
       body  {
 background-image: url(https://cdn.luogu.com.cn/upload/image_hosting/6nze2yn1.png);
 background-repeat: repeat-y;
+ background-size: cover;
 background-attachment:fixed;
 }
 
