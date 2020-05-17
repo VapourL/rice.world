@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://vapourl.github.io/rice.world/</id>
     <title>糯米糯米の世界</title>
-    <updated>2020-05-17T12:57:03.415Z</updated>
+    <updated>2020-05-17T13:09:20.847Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://vapourl.github.io/rice.world/"/>
     <link rel="self" href="https://vapourl.github.io/rice.world/atom.xml"/>
-    <subtitle>这一生一百年，不是备尝艰辛，更不是疲于奔命。</subtitle>
+    <subtitle>众神已死。</subtitle>
     <logo>https://vapourl.github.io/rice.world/images/avatar.png</logo>
     <icon>https://vapourl.github.io/rice.world/favicon.ico</icon>
     <rights>All rights reserved 2020, 糯米糯米の世界</rights>
