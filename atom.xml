@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://vapourl.github.io/rice.world/</id>
     <title>糯米糯米の世界</title>
-    <updated>2020-05-17T13:09:20.847Z</updated>
+    <updated>2020-05-17T13:54:07.825Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://vapourl.github.io/rice.world/"/>
     <link rel="self" href="https://vapourl.github.io/rice.world/atom.xml"/>
@@ -11,18 +11,11 @@
     <icon>https://vapourl.github.io/rice.world/favicon.ico</icon>
     <rights>All rights reserved 2020, 糯米糯米の世界</rights>
     <entry>
-        <title type="html"><![CDATA[图片链]]></title>
-        <id>https://vapourl.github.io/rice.world/post/tu-pian-lian/</id>
-        <link href="https://vapourl.github.io/rice.world/post/tu-pian-lian/">
+        <title type="html"><![CDATA[《洛谷之光》合集]]></title>
+        <id>https://vapourl.github.io/rice.world/post/lesslessluo-gu-zhi-guang-greatergreater-he-ji/</id>
+        <link href="https://vapourl.github.io/rice.world/post/lesslessluo-gu-zhi-guang-greatergreater-he-ji/">
         </link>
-        <updated>2020-05-03T02:32:11.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[第三十章 去搭讪妹子吧！]]></title>
-        <id>https://vapourl.github.io/rice.world/post/di-san-shi-zhang-qu-da-shan-mei-zi-ba/</id>
-        <link href="https://vapourl.github.io/rice.world/post/di-san-shi-zhang-qu-da-shan-mei-zi-ba/">
-        </link>
-        <updated>2020-02-29T10:30:11.000Z</updated>
+        <updated>2020-05-17T13:52:15.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[关于P站的神仙上法]]></title>
@@ -30,13 +23,6 @@
         <link href="https://vapourl.github.io/rice.world/post/guan-yu-p-zhan-de-shen-xian-shang-fa/">
         </link>
         <updated>2020-02-28T13:32:16.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[第二十九章 去沙滩玩吧！]]></title>
-        <id>https://vapourl.github.io/rice.world/post/vacation/</id>
-        <link href="https://vapourl.github.io/rice.world/post/vacation/">
-        </link>
-        <updated>2020-02-25T07:49:44.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[关于Ghelper的安装问题]]></title>
