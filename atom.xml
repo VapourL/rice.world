@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://vapourl.github.io/rice.world/</id>
     <title>糯米糯米の世界</title>
-    <updated>2020-05-18T12:44:55.028Z</updated>
+    <updated>2020-06-06T12:04:04.322Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://vapourl.github.io/rice.world/"/>
     <link rel="self" href="https://vapourl.github.io/rice.world/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://vapourl.github.io/rice.world/images/avatar.png</logo>
     <icon>https://vapourl.github.io/rice.world/favicon.ico</icon>
     <rights>All rights reserved 2020, 糯米糯米の世界</rights>
+    <entry>
+        <title type="html"><![CDATA[In the darkness]]></title>
+        <id>https://vapourl.github.io/rice.world/post/in-the-darkness/</id>
+        <link href="https://vapourl.github.io/rice.world/post/in-the-darkness/">
+        </link>
+        <updated>2020-06-06T12:02:36.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[《洛谷之光》合集]]></title>
         <id>https://vapourl.github.io/rice.world/post/lesslessluo-gu-zhi-guang-greatergreater-he-ji/</id>
